@@ -1,22 +1,42 @@
 import clsx from "clsx";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link as LinkScroll} from "react-scroll";
-
-// eslint-disable-next-line react/prop-types
-const NavLink =({title}) =>(
-  <LinkScroll className="base-bold text-p4 uppercase 
-  transition-colors duration-500 cursor-pointer hover:text-p1
-  max-lg:my-4 max-lg:h5">
-    {title}
-  </LinkScroll>
-)
 
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const [hasScrolled, setHasScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setHasScrolled(window.scrollY > 32);
+    }
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    }
+  },[])
+
+  // eslint-disable-next-line react/prop-types
+  const NavLink =({title}) =>(
+    <LinkScroll 
+    to={title} offset={-100} onClick={()=>setIsOpen(false)}
+    spy smooth activeClass="nav-active"
+    className="base-bold text-p4 uppercase 
+    transition-colors duration-500 cursor-pointer hover:text-p1
+    max-lg:my-4 max-lg:h5">
+      {title}
+    </LinkScroll>
+  )
+  
 
   return (
-    <header className="fixed top-0 left-0 z-50 w-full py-10">
+    <header 
+    className={clsx("fixed top-0 left-0 z-50 w-full py-10 transition-all duration-500 max-lg:py-4",
+    hasScrolled &&
+    "bg-black-100 py-2 backdrop-blur-[8px]")}>
       <div className="container flex h-14 items-center max-lg:px-5">
         <a className="lg:hidden flex-1 cursor-pointer z-2">
           <img src="/images/xora.svg" alt="logo" width={115} height={55} />
@@ -36,7 +56,7 @@ function Header() {
               </li>
 
               <li className="nav-logo">
-                <LinkScroll to="hero" offset={-100} spy smooth 
+                <LinkScroll to="hero" offset={-250} spy smooth 
                 className={clsx("max-lg:hidden transition-transform duration-500 cursor-pointer")}>
                   <img src="/images/xora.svg" width={160} height={55} alt="logo" />
                 </LinkScroll>
