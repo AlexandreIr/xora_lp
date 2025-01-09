@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { Element } from "react-scroll"
 import { faq } from "../constants"
 import FaqItem from "../components/FaqItem";

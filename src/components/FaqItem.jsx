@@ -18,7 +18,7 @@ function FaqItem({id,question, answer, index}) {
         }}>
             <div className="flex-1">
                 <div className="small-compact mb-1.5 text-p3 max-lg:hidden">
-                    {index<10?'0':''}{index}
+                    {index<9?'0':''}{index+1}
                 </div>
                 <div className={clsx(`h6 text-p4 transition-colors 
                     duration-500 max-md:flex 
