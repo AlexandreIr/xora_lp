@@ -37,7 +37,13 @@ const Features = () => {
                   {title}
                 </h2>
                 <p className="mb-11 body-1 max-md:mb-8 max-md:body-3">{text}</p>
-                <Button icon={button.icon}>{button.title}</Button>
+                <Button icon={button.icon}>
+                  <a href={id==0?"https://github.com/AlexandreIr"
+                  :"https://www.linkedin.com/in/alexandre-fernandes-da-silva/"}
+                  target="_blank">
+                    {button.title}
+                  </a>
+                </Button>
               </div>
             ))}
 

@@ -106,7 +106,12 @@ function Pricing() {
                             </ul>
                             <div className="mt-10 flex w-full justify-center">
                                 <Button icon={plan.icon}>
-                                    Get started    
+                                    <a 
+                                    href={index==1? "https://github.com/AlexandreIr":
+                                    "https://www.linkedin.com/in/alexandre-fernandes-da-silva/"} 
+                                    target="_blank" >
+                                        Get started    
+                                    </a>
                                 </Button>    
                             </div>
                             {index===1 &&(

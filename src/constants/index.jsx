@@ -379,25 +379,25 @@ export const features = [
       id: '0',
       title: 'Ios',
       icon: <Ios />,
-      url: '#',
+      url: 'https://github.com/AlexandreIr',
     },
     {
       id: '1',
       title: 'Android',
       icon: <Android />,
-      url: '#',
+      url: 'https://www.linkedin.com/in/alexandre-fernandes-da-silva/',
     },
     {
       id: '2',
       title: 'Windows',
       icon: <Windows />,
-      url: '#',
+      url: 'https://github.com/AlexandreIr',
     },
     {
       id: '3',
       title: 'Web',
       icon: <Web />,
-      url: '#',
+      url: 'https://www.linkedin.com/in/alexandre-fernandes-da-silva/',
     },
   ];
   

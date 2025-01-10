@@ -21,7 +21,8 @@ function Download() {
                             {links.map(({id, url, icon}) => (
                                 <li key={id} className="download_tech-link 
                                 download_tech-link_last-before download_tech-link_last-after">
-                                    <a href={url} className="size-22 
+                                    <a href={url} target="_blank"
+                                    className="size-22 
                                     download_tech-icon_before relative flex
                                     items-center justify-center rounded-half 
                                     border-2 border-s3 bg-s1 
